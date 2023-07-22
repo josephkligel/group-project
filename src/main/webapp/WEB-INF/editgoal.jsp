@@ -7,54 +7,66 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
-<title>Edit Goal</title>
+<title>New Journal</title>
+<!-- for Bootstrap CSS -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<!-- YOUR own local CSS -->
+<link rel="stylesheet" href="/css/main.css"/>
+<!-- For any Bootstrap that uses JS -->
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<h3><a href="/home">Back</a></h3>
-
-
-<h1>Edit Goal</h1>
-
-<form:form action="/goal/edit/${id}" method="post" modelAttribute="goal">
-
-	<table>
-	    <thead>
-	    	<tr>
-	            <td class="float-left">Goal Name:</td>
-	            <td class="float-left">
-	            	<form:errors path="goalName" class="text-danger"/>
-					<form:input class="input" path="goalName"/>
-	            </td>
-	        </tr>
-	        
-	        <tr>
-	            <td class="float-left">Goal Length:</td>
-	            <td class="float-left">
-	            	<form:errors path="shortOrLong" class="text-danger"/>
-					<form:input path="shortOrLong" class="text-danger"/>
-	            </td>
-	        </tr>
-	      	
-	      	<tr>
-	            <td class="float-left">Description:</td>
-	            <td class="float-left">
-	            	<form:errors path="description" class="text-danger"/>
-					<form:textarea path="description" class="text-danger"/>
-	            </td>
-	        </tr>
-	       
-	        
-	        <form:errors path="aspirer" class="error"/>
-			<form:input type="hidden" path="aspirer" value="${userId}" class="form-control"/>
+	<div class="container">
+	
+		<nav class="navbar navbar-expand-lg mb-4">
+		
 			
-	        <tr>
-	        	<td><a class="linkBtn" href="/home">Cancel</a></td>
-	        	<td><input class="input" type="submit" value="Save"/></td>
-	        </tr>
-	        
-	    </thead>
-	</table>
-</form:form>
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">InnerGuru</a>
+			</div>
+			
+			<div>
+			    <a class="" href="/home">Home</a>
+	           	<a href="/logout">Logout</a>
+		    </div>
+			
+		</nav>
+		
+		<form:form class="mb-5" action="/goal/edit/${id}" method="post" modelAttribute="goal">
+			
+				<h3 class="mb-5">Edit a Goal:</h3>
+				
+				<form:errors path="aspirer" class="error"/>
+				<form:input type="hidden" path="aspirer" value="${userId}" class="form-control"/>
+				
+				<input type="hidden" name="_method" value="put" />
+			
+				<div class="row mb-3">
+					<form:label class="col-form-label col-sm-3" path="goalName">Goal Name:</form:label>
+					<form:input class="col-sm-5" path="goalName"/>
+					<form:errors path="goalName" class="text-danger"/>
+				</div>
+				
+				<div class="row mb-3">
+					<form:label class="col-form-label col-sm-3" path="shortOrLong">Goal Length:</form:label>
+					<form:input class="col-sm-5" path="shortOrLong"/>
+					<form:errors path="shortOrLong" class="text-danger"/>
+				</div>
+				
+				<div class="row mb-3">
+					<form:label class="col-form-label col-sm-3" path="description">Description:</form:label>
+					<form:input class="col-sm-5" path="description"/>
+					<form:errors path="description" class="text-danger"/>
+				</div>
+				
+				<div class="col-sm-8 text-end">
+					<a class="btn btn-danger me-3" href="/home">Cancel</a>
+					<input class="btn btn-success" type="submit" value="Update"/>
+				</div>
+				    
+			</form:form>
+	
+	</div>
+	
 </body>
 </html>

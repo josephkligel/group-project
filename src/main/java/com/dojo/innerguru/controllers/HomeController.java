@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dojo.innerguru.models.Comment;
@@ -115,7 +116,7 @@ public class HomeController {
 				return "editgoal.jsp";
 			}
 			
-			@PostMapping("/goal/edit/{id}")
+			@PutMapping("/goal/edit/{id}")
 			public String editGoal(
 					@PathVariable("id") Long id, 
 					@Valid @ModelAttribute("goal") Goal goal, 
@@ -239,7 +240,7 @@ public class HomeController {
 				return "editjournal.jsp";
 			}
 			
-			@PostMapping("/journal/edit/{id}")
+			@PutMapping("/journal/edit/{id}")
 			public String editJournal(
 					@PathVariable("id") Long id, 
 					@Valid @ModelAttribute("journal") Journal journal, 
