@@ -17,14 +17,14 @@
 
 	<div class="container">
 	
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
 		  <div class="container-fluid">
 		    <a class="navbar-brand" href="#">InnerGuru</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarNav">
-		      <ul class="navbar-nav">
+		      <ul class="navbar-nav text-end">
 		        <li class="nav-item">
 		          <a class="nav-link" aria-current="page" href="/home">Home</a>
 		        </li>
@@ -48,35 +48,43 @@
 		  </div>
 		</nav>
 
-		
-		<div>
-		
-			<h3>
-				<c:out value="${goal.goalName}"></c:out>
-			</h3>
-		
-			<div class="card p-3">
+		<div class="card-container">
 			
-				<p>
-					Goal Length:
-					<c:out value="${goal.shortOrLong}"></c:out>
-				</p>
+			<div></div>
+			
+			<div>
+			
+				<h3 class="mb-4">
+						<c:out value="${goal.goalName}"></c:out>
+				</h3>
 				
-				<p>
-					Description:
-					<c:out value="${goal.description}"></c:out>
-				</p>
+				<div class="card p-3">
 				
-				<c:if test = "${goal.aspirer.id==userId}">
-					<div class="text-end">
-						<a class="btn btn-primary me-2" href="/goal/edit/${goal.id}">Edit</a>
-					    <a class="btn btn-danger" href="/goal/delete/${goal.id}">Delete</a>					
+						<p>
+							Goal Length:
+							<c:out value="${goal.shortOrLong}"></c:out>
+						</p>
+						
+						<p>
+							Description:
+							<c:out value="${goal.description}"></c:out>
+						</p>
+						
+						<c:if test = "${goal.aspirer.id==userId}">
+							<div class="text-end">
+								<a class="btn btn-primary me-2" href="/goal/edit/${goal.id}">Edit</a>
+							    <a class="btn btn-danger" href="/goal/delete/${goal.id}">Delete</a>					
+							</div>
+						</c:if>
+					
 					</div>
-				</c:if>
+		
+				</div>
 			
-			</div>
-
 		</div>
+		
+		
+
 		
 		<footer class="text-center">
 			<small>&copy; 2023 Angel and Jkligel</small>

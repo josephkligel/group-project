@@ -1,6 +1,30 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.form-container {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
 @media only screen and (min-width: 1024px) {
 	.grid-container {
 		display: grid;
 		grid-template-columns: auto auto 16px;
+	}
+	
+	.form-container {
+		display: inline-block;
+	}
+	
+	.table-container {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		column-gap: 2.5%;
 	}
 }

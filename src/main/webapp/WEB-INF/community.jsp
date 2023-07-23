@@ -16,14 +16,14 @@
 <body>
 	<div class="container">
 	
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
 		  <div class="container-fluid">
 		    <a class="navbar-brand" href="#">InnerGuru</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarNav">
-		      <ul class="navbar-nav">
+		      <ul class="navbar-nav text-end">
 		        <li class="nav-item">
 		          <a class="nav-link" aria-current="page" href="/home">Home</a>
 		        </li>
@@ -63,12 +63,12 @@
 			    	<c:forEach var="journal" items="${allJournals}">
 			    		<c:if test = "${journal.privacy==0}">
 							<tr>
-								<td><a href="/journals/${journal.id}">${journal.journalTitle}</a></td>
+								<td><a class="text-success" href="/journals/${journal.id}">${journal.journalTitle}</a></td>
 								<td><c:out value="${journal.createdAt}"></c:out></td>
 								<c:if test = "${journal.journaler.id==user.id}">
 									<td>
 										<a class="me-2" href="/journal/edit/${journal.id}">Edit</a>
-							       		<a href="/journal/delete/${journal.id}">Delete</a>
+							       		<a class="text-danger" href="/journal/delete/${journal.id}">Delete</a>
 							       	</td>
 							    </c:if>
 							</tr>	

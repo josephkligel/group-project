@@ -16,14 +16,14 @@
 <body>
 	<div class="container">
 	
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
 		  <div class="container-fluid">
 		    <a class="navbar-brand" href="#">InnerGuru</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarNav">
-		      <ul class="navbar-nav">
+		      <ul class="navbar-nav text-end">
 		        <li class="nav-item">
 		          <a class="nav-link" aria-current="page" href="/home">Home</a>
 		        </li>
@@ -48,7 +48,10 @@
 		</nav>
 
 		
-		<form:form class="mb-5" action="/goals/new" method="post" modelAttribute="goal">
+		<div class="form-container">
+			<div></div>
+			
+			<form:form class="mb-5" action="/goals/new" method="post" modelAttribute="goal">
 			
 				<h3 class="mb-5">Add a Goal:</h3>
 				
@@ -79,6 +82,7 @@
 				</div>
 				    
 			</form:form>
+		</div>
 			
 			<footer class="text-center">
 				<small>&copy; 2023 Angel and Jkligel</small>

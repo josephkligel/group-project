@@ -16,14 +16,14 @@
 <body>
 	<div class="container">
 	
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
 		  <div class="container-fluid">
 		    <a class="navbar-brand" href="#">InnerGuru</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarNav">
-		      <ul class="navbar-nav">
+		      <ul class="navbar-nav text-end">
 		        <li class="nav-item">
 		          <a class="nav-link" aria-current="page" href="/home">Home</a>
 		        </li>
@@ -47,27 +47,32 @@
 		  </div>
 		</nav>
 		
-		<form:form class="mb-5" action="/editcomment/{id}" method="post" modelAttribute="comment">
+		<div class="form-container">
+			<div></div>
 			
-				<h3 class="mb-5">Edit a Comment:</h3>
+			<form:form class="mb-5" action="/editcomment/{id}" method="post" modelAttribute="comment">
+		
+					<h3 class="mb-5">Edit a Comment:</h3>
+					
+					<input type="hidden" name="_method" value="put" />
+					
+					<form:errors path="journaler" class="error"/>
+					<form:input type="hidden" path="journaler" value="${userId}" class="form-control"/>
 				
-				<input type="hidden" name="_method" value="put" />
-				
-				<form:errors path="journaler" class="error"/>
-				<form:input type="hidden" path="journaler" value="${userId}" class="form-control"/>
+					<div class="row mb-3">
+						<form:label class="col-form-label col-sm-3" path="commentPost">Comment Post:</form:label>
+						<form:textarea rows="5" class="col-sm-5" path="commentPost"/>
+						<form:errors path="commentPost" class="text-danger"/>
+					</div>
+					<div class="col-sm-8 text-end">
+						<a class="btn btn-danger me-3" href="/home">Cancel</a>
+						<input class="btn btn-success" type="submit" value="Update"/>
+					</div>
+					    
+			</form:form>
 			
-				<div class="row mb-3">
-					<form:label class="col-form-label col-sm-3" path="commentPost">Comment Post:</form:label>
-					<form:textarea rows="5" class="col-sm-5" path="commentPost"/>
-					<form:errors path="commentPost" class="text-danger"/>
-				</div>
-				<div class="col-sm-8 text-end">
-					<a class="btn btn-danger me-3" href="/home">Cancel</a>
-					<input class="btn btn-success" type="submit" value="Update"/>
-				</div>
-				    
-		</form:form>
-			
+		</div>
+		
 		<footer class="text-center">
 			<small>&copy; 2023 Angel and Jkligel</small>
 		</footer>
