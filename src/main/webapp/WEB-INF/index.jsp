@@ -12,8 +12,6 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <!-- YOUR own local CSS -->
 <link rel="stylesheet" href="/css/main.css"/>
-<!-- For any Bootstrap that uses JS -->
-<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -96,6 +94,7 @@
 		</footer>
 		
 	</div>	
-
+	<!-- For any Bootstrap that uses JS -->
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

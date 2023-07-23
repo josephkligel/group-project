@@ -12,25 +12,39 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 <!-- YOUR own local CSS -->
 <link rel="stylesheet" href="/css/main.css"/>
-<!-- For any Bootstrap that uses JS -->
-<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
 	
-		<nav class="navbar navbar-expand-lg mb-4">
-		
-			
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">InnerGuru</a>
-			</div>
-			
-			<div>
-				<a href="javascript:history.back()">Go Back</a>
-			    <a class="" href="/home">Home</a>
-	           	<a href="/logout">Logout</a>
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#">InnerGuru</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNav">
+		      <ul class="navbar-nav">
+		        <li class="nav-item">
+		          <a class="nav-link" aria-current="page" href="/home">Home</a>
+		        </li>
+		        <li class="nav-item">
+		        	<a class="nav-link" href="javascript:history.back()">Go Back</a>
+		        </li>
+		        <li class="nav-item">
+		          	<a class="nav-link" href="/journals/new">Add New Journal</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="/goals/new">Add New Goal</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="/communityposts">Community</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="/logout">Logout</a>
+		        </li>
+		      </ul>
 		    </div>
-			
+		  </div>
 		</nav>
 		
 		<form:form class="mb-5" action="/editcomment/{id}" method="post" modelAttribute="comment">
@@ -60,5 +74,7 @@
 	
 	</div>
 	
+	<!-- For any Bootstrap that uses JS -->
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
