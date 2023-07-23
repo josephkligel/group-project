@@ -26,6 +26,7 @@
 			</div>
 			
 			<div>
+				<a href="javascript:history.back()">Go Back</a>
 			    <a class="" href="/home">Home</a>
 	           	<a href="/logout">Logout</a>
 		    </div>
@@ -76,6 +77,10 @@
 				</div>
 				    
 			</form:form>
+			
+			<footer class="text-center">
+				<small>&copy; 2023 Angel and Jkligel</small>
+			</footer>
 	
 	</div>
 	

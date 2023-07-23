@@ -27,7 +27,7 @@
 	
 			<form:form class="mb-3" action="/register" method="post" modelAttribute="newUser">
 			
-				<h3>Register New User:</h3>
+				<h3 class="mb-4">Register New User:</h3>
 			
 				<div class="row mb-3">
 					<form:label class="col-form-label col-sm-3" path="firstName">First Name:</form:label>
@@ -69,7 +69,7 @@
 			
 			<form:form class="mb-5" action="/login" method="post" modelAttribute="newLogin">
 			
-				<h3>Login:</h3>
+				<h3 class="mb-4">Login:</h3>
 			
 				<div class="row mb-3">
 					<form:label class="col-form-label col-sm-3" path="email">Email:</form:label>

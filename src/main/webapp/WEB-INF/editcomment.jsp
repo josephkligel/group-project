@@ -33,43 +33,30 @@
 			
 		</nav>
 		
-		<form:form class="mb-5" action="/goal/edit/${id}" method="post" modelAttribute="goal">
+		<form:form class="mb-5" action="/editcomment/{id}" method="post" modelAttribute="comment">
 			
-				<h3 class="mb-5">Edit a Goal:</h3>
-				
-				<form:errors path="aspirer" class="error"/>
-				<form:input type="hidden" path="aspirer" value="${userId}" class="form-control"/>
+				<h3 class="mb-5">Edit a Comment:</h3>
 				
 				<input type="hidden" name="_method" value="put" />
+				
+				<form:errors path="journaler" class="error"/>
+				<form:input type="hidden" path="journaler" value="${userId}" class="form-control"/>
 			
 				<div class="row mb-3">
-					<form:label class="col-form-label col-sm-3" path="goalName">Goal Name:</form:label>
-					<form:input class="col-sm-5" path="goalName"/>
-					<form:errors path="goalName" class="text-danger"/>
+					<form:label class="col-form-label col-sm-3" path="commentPost">Comment Post:</form:label>
+					<form:textarea rows="5" class="col-sm-5" path="commentPost"/>
+					<form:errors path="commentPost" class="text-danger"/>
 				</div>
-				
-				<div class="row mb-3">
-					<form:label class="col-form-label col-sm-3" path="shortOrLong">Goal Length:</form:label>
-					<form:input class="col-sm-5" path="shortOrLong"/>
-					<form:errors path="shortOrLong" class="text-danger"/>
-				</div>
-				
-				<div class="row mb-3">
-					<form:label class="col-form-label col-sm-3" path="description">Description:</form:label>
-					<form:input class="col-sm-5" path="description"/>
-					<form:errors path="description" class="text-danger"/>
-				</div>
-				
 				<div class="col-sm-8 text-end">
 					<a class="btn btn-danger me-3" href="/home">Cancel</a>
 					<input class="btn btn-success" type="submit" value="Update"/>
 				</div>
 				    
-			</form:form>
+		</form:form>
 			
-			<footer class="text-center">
-				<small>&copy; 2023 Angel and Jkligel</small>
-			</footer>
+		<footer class="text-center">
+			<small>&copy; 2023 Angel and Jkligel</small>
+		</footer>
 	
 	</div>
 	

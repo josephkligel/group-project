@@ -27,7 +27,7 @@
 				<a class="navbar-brand" href="#">InnerGuru</a>
 			</div>
 			
-			<div>
+			<div class="">
 			    <a class="" href="/home">Home</a>
 	           	<a href="/journals/new">Add New Journal</a>
 	            <a href="/goals/new">Add New Goal</a>
@@ -90,6 +90,10 @@
 			</table>
 			
 		</div>
+		
+		<footer class="text-center">
+			<small>&copy; 2023 Angel and Jkligel</small>
+		</footer>
 	
 	</div>
 
