@@ -62,23 +62,23 @@
 			
 				<div class="row mb-3">
 					<form:label class="col-form-label col-sm-3" path="goalName">Goal Name:</form:label>
-					<form:input class="col-sm-5" path="goalName"/>
+					<form:input class="col-sm-9" path="goalName"/>
 					<form:errors path="goalName" class="text-danger"/>
 				</div>
 				
 				<div class="row mb-3">
 					<form:label class="col-form-label col-sm-3" path="shortOrLong">Goal Length:</form:label>
-					<form:input class="col-sm-5" path="shortOrLong"/>
+					<form:input class="col-sm-9" path="shortOrLong"/>
 					<form:errors path="shortOrLong" class="text-danger"/>
 				</div>
 				
 				<div class="row mb-3">
 					<form:label class="col-form-label col-sm-3" path="description">Description:</form:label>
-					<form:input class="col-sm-5" path="description"/>
+					<form:input class="col-sm-9" path="description"/>
 					<form:errors path="description" class="text-danger"/>
 				</div>
 				
-				<div class="col-sm-8 text-end">
+				<div class=""" text-end">
 					<a class="btn btn-danger me-3" href="/home">Cancel</a>
 					<input class="btn btn-success" type="submit" value="Update"/>
 				</div>

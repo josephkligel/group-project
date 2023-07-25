@@ -60,13 +60,13 @@
 				
 					<div class="row mb-3">
 						<form:label class="col-form-label col-sm-3" path="journalTitle">Journal Title:</form:label>
-						<form:input class="col-sm-5" path="journalTitle"/>
+						<form:input class="col-sm-9" path="journalTitle"/>
 						<form:errors path="journalTitle" class="text-danger"/>
 					</div>
 					
 					<div class="row mb-3">
 						<form:label class="form-label col-sm-3" path="privacy">Privacy:</form:label>
-						<div class="col-sm-5">
+						<div class="col-sm-9">
 							<div class="form-check form-check-inline">
 								<form:label for="priv" class="form-check-label" path="privacy">Public</form:label>
 								<form:radiobutton class="form-check-input" name="priv" value= "0" path="privacy"/>
@@ -85,11 +85,11 @@
 					
 					<div class="row mb-3">
 						<form:label class="col-form-label col-sm-3" path="entry">Entry:</form:label>
-						<form:textarea rows="7" class="col-sm-5" path="entry"/>
+						<form:textarea rows="7" class="col-sm-9" path="entry"/>
 						<form:errors path="entry" class="text-danger"/>
 					</div>
 					
-					<div class="col-sm-8 text-end">
+					<div class="text-end">
 						<a class="btn btn-danger me-3" href="/home">Cancel</a>
 						<input class="btn btn-success" type="submit" value="Create"/>
 					</div>

@@ -59,10 +59,10 @@
 			
 				<div class="row mb-3">
 					<form:label class="col-form-label col-sm-3" path="commentPost">Comment Post:</form:label>
-					<form:textarea rows="5" class="col-sm-5" path="commentPost"/>
+					<form:textarea rows="5" class="col-sm-9" path="commentPost"/>
 					<form:errors path="commentPost" class="text-danger"/>
 				</div>
-				<div class="col-sm-8 text-end">
+				<div class="col-sm-12 text-end">
 					<a class="btn btn-danger me-3" href="/home">Cancel</a>
 					<input class="btn btn-success" type="submit" value="Create"/>
 				</div>

@@ -49,9 +49,10 @@
 		<h3 class="text-center mb-4">${user.firstName}'s Home</h3>
 		
 		<div class="table-container">
+			<div></div>
 		
 			<div class="mb-4">
-				<h4>Your Goals:</h4>
+				<h4 class="mb-4">Your Goals:</h4>
 				
 				<table class="table table-striped">
 				
@@ -84,7 +85,7 @@
 			</div>
 			
 			<div>
-				<h4>Your Journal Entries:</h4>
+				<h4 class="mb-4">Your Journal Entries:</h4>
 				
 				<table class="table table-striped">
 					
