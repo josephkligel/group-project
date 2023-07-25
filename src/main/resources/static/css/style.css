@@ -42,4 +42,8 @@ footer {
 	.form-container {
 		grid-template-columns: 1fr 1fr;
 	}
+	
+	.card-container {
+		grid-template-columns: 2fr 1fr;
+	}
 }
