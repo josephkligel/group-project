@@ -89,7 +89,7 @@
 					
 					</c:if>
 					
-					<c:forEach var="comment" items="${assignedComments}">
+					<c:forEach var="comment" items="${journal.comments}">
 						<c:if test="${journal.privacy==0}">
 						
 							<table>
