@@ -12,6 +12,5 @@ import com.dojo.innerguru.models.User;
 public interface GoalRepo extends CrudRepository<Goal, Long> {
 		List<Goal> findAll();
 		Goal findByIdIs(Long id);
-		List<Goal> findAllByUsers(User user);
-		List<Goal> findByUsersNotContains(User user);
+		List<Goal> findAllByUser(User user);
 	}

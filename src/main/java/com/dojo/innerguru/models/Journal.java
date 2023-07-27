@@ -1,7 +1,6 @@
 package com.dojo.innerguru.models;
 
 import java.util.Date;
-
 import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -59,39 +58,21 @@ public class Journal {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="journal_id")
-    private User journaler;
+    private Journal journal;
     
-    @ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "users_journals",
-			joinColumns = @JoinColumn(name = "journal_id"),
-			inverseJoinColumns = @JoinColumn(name = "user_id")
-	)
-    private List<User> users;
-    
-    @ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "journals_comments",
-			joinColumns = @JoinColumn(name = "journal_id"),
-			inverseJoinColumns = @JoinColumn(name = "comment_id")
-	)
-    private List<Comment> comments;
+    @ManyToOne(optional=false, fetch = FetchType.EAGER)
+    @JoinColumn(name="user_id")
+    private User user;
     
     @Column(updatable=false)
-    @OneToMany(mappedBy="journaler", fetch = FetchType.LAZY)
-    private List<Comment> commentsReceived;
+    @OneToMany(mappedBy="journal", fetch=FetchType.EAGER)
+    private List<Comment> comments;
     
     public List<Comment> getComments() {
 		return comments;
 	}
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
-	}
-	public List<Comment> getCommentsReceived() {
-		return commentsReceived;
-	}
-	public void setCommentsReceived(List<Comment> commentsReceived) {
-		this.commentsReceived = commentsReceived;
 	}
 	public Journal() {}
 
@@ -131,17 +112,17 @@ public class Journal {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	public User getJournaler() {
-		return journaler;
+	public User getUser() {
+		return user;
 	}
-	public void setJournaler(User journaler) {
-		this.journaler = journaler;
+	public void setUser(User user) {
+		this.user = user;
 	}
-	public List<User> getUsers() {
-		return users;
+	public Journal getJournal() {
+		return journal;
 	}
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setJournal(Journal journal) {
+		this.journal = journal;
 	}
 	  
 }

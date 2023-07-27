@@ -64,13 +64,13 @@
 				    		<th>Actions</th>
 				    	</tr>
 				    </thead>
-				    <tbody>
+				    <tbody class="table-light">
 				    	<c:forEach var="goal" items="${assignedGoals}">
 							<tr>
 								<td><a class="text-success" href="/goals/${goal.id}">${goal.goalName}</a></td>
 								<td><c:out value="${goal.shortOrLong}"></c:out></td>
 								<td><span style="font-size: 10px"><c:out value="${goal.createdAt}"></c:out></span></td>
-								<c:if test = "${goal.aspirer.id==user.id}">
+								<c:if test = "${goal.user.id==user.id}">
 								    <td>
 							       		<a class="me-2" href="/goal/edit/${goal.id}">Edit</a>
 							       		<a class="text-danger" href="/goal/delete/${goal.id}">Delete</a>
@@ -96,12 +96,12 @@
 				    		<th>Actions</th>
 				    	</tr>
 				    </thead>
-				    <tbody>
-				    	<c:forEach var="journal" items="${assignedJournals}">
+				    <tbody class="table-light">
+				    	<c:forEach var="journal" items="${user.journals}">
 							<tr>
 								<td><a class="text-success" href="/journals/${journal.id}">${journal.journalTitle}</a></td>
 								<td><span style="font-size: 10px"><c:out value="${journal.createdAt}"></c:out></span></td>
-								<c:if test = "${journal.journaler.id==user.id}">
+								<c:if test = "${journal.user.id==user.id}">
 							       <td>
 							       		<a class="me-2" href="/journal/edit/${journal.id}">Edit</a>
 							       		<a class="text-danger" href="/journal/delete/${journal.id}">Delete</a>

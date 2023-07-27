@@ -66,41 +66,14 @@ public class User {
         this.updatedAt = new Date();
     }
     
-    @ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "users_journals",
-			joinColumns = @JoinColumn(name = "user_id"),
-			inverseJoinColumns = @JoinColumn(name = "journal_id")
-	)
+    @OneToMany(mappedBy="user", fetch=FetchType.EAGER)
     private List<Journal> journals;
     
-    @Column(updatable=false)
-    @OneToMany(mappedBy="journaler", fetch = FetchType.LAZY)
-    private List<Journal> journalsWritten;
-    
-    @ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "users_goals",
-			joinColumns = @JoinColumn(name = "user_id"),
-			inverseJoinColumns = @JoinColumn(name = "goal_id")
-	)
+    @OneToMany(mappedBy="user", fetch=FetchType.EAGER)
     private List<Goal> goals;
     
-    @Column(updatable=false)
-    @OneToMany(mappedBy="aspirer", fetch = FetchType.LAZY)
-    private List<Goal> goalsMade;
-    
-    @ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "users_comments",
-			joinColumns = @JoinColumn(name = "user_id"),
-			inverseJoinColumns = @JoinColumn(name = "comment_id")
-	)
+    @OneToMany(mappedBy="user", fetch=FetchType.EAGER)
     private List<Comment> comments;
-    
-    @Column(updatable=false)
-    @OneToMany(mappedBy="commenter", fetch = FetchType.LAZY)
-    private List<Comment> commentsMade;
 
     public User() {}
 	public Long getId() {
@@ -157,34 +130,16 @@ public class User {
 	public void setJournals(List<Journal> journals) {
 		this.journals = journals;
 	}
-	public List<Journal> getJournalsWritten() {
-		return journalsWritten;
-	}
-	public void setJournalsWritten(List<Journal> journalsWritten) {
-		this.journalsWritten = journalsWritten;
-	}
 	public List<Goal> getGoals() {
 		return goals;
 	}
 	public void setGoals(List<Goal> goals) {
 		this.goals = goals;
 	}
-	public List<Goal> getGoalsMade() {
-		return goalsMade;
-	}
-	public void setGoalsMade(List<Goal> goalsMade) {
-		this.goalsMade = goalsMade;
-	}
 	public List<Comment> getComments() {
 		return comments;
 	}
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
-	}
-	public List<Comment> getCommentsMade() {
-		return commentsMade;
-	}
-	public void setCommentsMade(List<Comment> commentsMade) {
-		this.commentsMade = commentsMade;
 	}
 }

@@ -70,7 +70,7 @@
 							<c:out value="${goal.description}"></c:out>
 						</p>
 						
-						<c:if test = "${goal.aspirer.id==userId}">
+						<c:if test = "${goal.user.id==userId}">
 							<div class="text-end">
 								<a class="btn btn-primary me-2" href="/goal/edit/${goal.id}">Edit</a>
 							    <a class="btn btn-danger" href="/goal/delete/${goal.id}">Delete</a>					

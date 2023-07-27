@@ -56,8 +56,8 @@
 					
 					<input type="hidden" name="_method" value="put" />
 					
-					<form:errors path="journaler" class="error"/>
-					<form:input type="hidden" path="journaler" value="${userId}" class="form-control"/>
+					<form:errors path="user" class="error"/>
+					<form:input type="hidden" path="user" value="${userId}" class="form-control"/>
 				
 					<div class="row mb-3">
 						<form:label class="col-form-label col-sm-3" path="commentPost">Comment Post:</form:label>

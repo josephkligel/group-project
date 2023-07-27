@@ -70,7 +70,7 @@
 						<c:out value="${journal.privacy}"></c:out>
 					</p>
 					
-					<c:if test = "${journal.journaler.id==userId}">
+					<c:if test = "${journal.user.id==userId}">
 						<div class="text-end">
 							<a class="btn btn-primary me-2" href="/journal/edit/${journal.id}">Edit</a>
 					    	<a class="btn btn-danger" href="/journal/delete/${journal.id}">Delete</a>
@@ -83,32 +83,38 @@
 				
 					<c:if test="${journal.privacy==0}">
 					
-						<div class="text-end">
+						<div class="text-end mb-3">
 							<a href="/comments/new">Add Comment</a>
 						</div>
+						<h5 class="text-center">Comments</h5>
+						
+						<hr />
+						
+						<c:forEach var="comment" items="${journal.comments}">
+							
+							
+						
+							<div class="card p-3 mb-3 w-75">
+								<p>
+									${comment.commentPost }
+								</p>
+								<p class="ms-4">
+									-- ${comment.user.firstName }
+							       	
+								</p>
+								<c:if test = "${comment.user.id==userId}">
+							       		<div class="text-end">
+									       <a class="btn btn-primary me-2" href="/editcomment/${comment.id}">Edit</a>
+									       <a class="btn btn-danger" href="/comment/delete/${comment.id}">Delete</a>
+							       		</div>
+								</c:if>
+							</div>
+							
+					</c:forEach>
 					
 					</c:if>
 					
-					<c:forEach var="comment" items="${journal.comments}">
-						<c:if test="${journal.privacy==0}">
-						
-							<table>
-							    <tbody>
-							    
-							    	<tr>
-							        	<td class="float-left">${comment.commenter.firstName}:</td>
-							        	<td><c:out value="${comment.commentPost}"></c:out></td>
-							       	<c:if test = "${comment.commenter.id==user.id}">
-								       <td><a href="/editcomment/${comment.id}">Edit</a></td>
-								       <td><a href="/comment/delete/${comment.id}">Delete</a></td>
-								    </c:if>
-							        </tr>
-							        
-							    </tbody>
-							</table>
-						</c:if>
-							
-					</c:forEach>
+					
 					
 				</div>
 				

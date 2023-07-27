@@ -26,13 +26,6 @@ public class CommentServ {
 		return commentRepo.save(comment);
 	}
 	
-	public List<Comment> getAssignedComments(User user){
-		return commentRepo.findAllByUsers(user);
-	}
-	
-	public List<Comment> getUnassignedComments(User user){
-		return commentRepo.findByUsersNotContains(user);
-	}
 	
 	
 	public Comment addComment(Comment comment) {

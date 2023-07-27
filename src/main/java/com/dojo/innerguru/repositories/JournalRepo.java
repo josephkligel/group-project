@@ -12,6 +12,5 @@ import com.dojo.innerguru.models.User;
 public interface JournalRepo extends CrudRepository<Journal, Long> {
 		List<Journal> findAll();
 		Journal findByIdIs(Long id);
-		List<Journal> findAllByUsers(User user);
-		List<Journal> findByUsersNotContains(User user);
+		List<Journal> findAllByUser(User user);
 		}

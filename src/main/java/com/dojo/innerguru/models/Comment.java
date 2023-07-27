@@ -50,28 +50,12 @@ public class Comment {
     }
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="comment_id")
-    private User commenter;
-    
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "users_comments",
-			joinColumns = @JoinColumn(name = "comment_id"),
-			inverseJoinColumns = @JoinColumn(name = "user_id")
-	)
-    private List<User> users;
+    @JoinColumn(name="user_id")
+    private User user;
     
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="journal_id")
-    private Journal journaler;
-    
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "journals_comments",
-			joinColumns = @JoinColumn(name = "comment_id"),
-			inverseJoinColumns = @JoinColumn(name = "journal_id")
-	)
-    private List<Journal> journals;
+    private Journal journal;
     
     public Comment() {}
 	public Long getId() {
@@ -93,37 +77,26 @@ public class Comment {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	public User getCommenter() {
-		return commenter;
+	public User getUser() {
+		return user;
 	}
-	public void setCommenter(User commenter) {
-		this.commenter = commenter;
-	}
-	public List<User> getUsers() {
-		return users;
-	}
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
     
-	 public List<Journal> getJournals() {
-			return journals;
-		}
-	 public void setJournals(List<Journal> journals) {
-			this.journals = journals;
-		}
-	 public String getCommentPost() {
-			return commentPost;
-		}
-		public void setCommentPost(String commentPost) {
-			this.commentPost = commentPost;
-		}
-		public Journal getJournaler() {
-			return journaler;
-		}
-		public void setJournaler(Journal journaler) {
-			this.journaler = journaler;
-		}
+ public String getCommentPost() {
+		return commentPost;
+	}
+	public void setCommentPost(String commentPost) {
+		this.commentPost = commentPost;
+	}
+	public Journal getJournal() {
+		return journal;
+	}
+	public void setJournal(Journal journal) {
+		this.journal = journal;
+	}
+
 
 
 }

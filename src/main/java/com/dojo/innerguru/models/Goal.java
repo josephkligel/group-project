@@ -53,18 +53,10 @@ public class Goal {
         this.updatedAt = new Date();
     }
     
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="goal_id")
-    private User aspirer;
-    
-    @ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(
-			name = "users_goals",
-			joinColumns = @JoinColumn(name = "goal_id"),
-			inverseJoinColumns = @JoinColumn(name = "user_id")
-	)
-    private List<User> users;
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="user_id")
+    private User user;
+        
     public Goal() {}
 	public Long getId() {
 		return id;
@@ -102,16 +94,10 @@ public class Goal {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	public User getAspirer() {
-		return aspirer;
+	public User getUser() {
+		return user;
 	}
-	public void setAspirer(User aspirer) {
-		this.aspirer = aspirer;
-	}
-	public List<User> getUsers() {
-		return users;
-	}
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

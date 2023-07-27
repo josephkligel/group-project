@@ -63,13 +63,13 @@
 				    		<th>Actions</th>
 				    	</tr>
 				    </thead>
-				    <tbody>
+				    <tbody class="table-light">
 				    	<c:forEach var="journal" items="${allJournals}">
 				    		<c:if test = "${journal.privacy==0}">
 								<tr>
 									<td><a class="text-success" href="/journals/${journal.id}">${journal.journalTitle}</a></td>
 									<td><c:out value="${journal.createdAt}"></c:out></td>
-									<c:if test = "${journal.journaler.id==user.id}">
+									<c:if test = "${journal.user.id==user.id}">
 										<td>
 											<a class="me-2" href="/journal/edit/${journal.id}">Edit</a>
 								       		<a class="text-danger" href="/journal/delete/${journal.id}">Delete</a>

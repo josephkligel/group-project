@@ -55,8 +55,8 @@
 			
 				<h3 class="mb-5">Add a Goal:</h3>
 				
-				<form:errors path="aspirer" class="error"/>
-				<form:input type="hidden" path="aspirer" value="${userId}" class="form-control"/>
+				<form:errors path="user" class="error"/>
+				<form:input type="hidden" path="user" value="${userId}" class="form-control"/>
 			
 				<div class="row mb-3">
 					<form:label class="col-form-label col-sm-3" path="goalName">Goal Name:</form:label>

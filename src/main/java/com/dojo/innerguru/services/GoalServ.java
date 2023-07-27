@@ -27,11 +27,7 @@ public class GoalServ {
 		}
 		
 		public List<Goal> getAssignedGoals(User user){
-			return goalRepo.findAllByUsers(user);
-		}
-		
-		public List<Goal> getUnassignedGoals(User user){
-			return goalRepo.findByUsersNotContains(user);
+			return goalRepo.findAllByUser(user);
 		}
 		
 		public Goal addGoal(Goal goal) {

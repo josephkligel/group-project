@@ -55,8 +55,8 @@
 			
 				<h3 class="mb-5">Edit a Goal:</h3>
 				
-				<form:errors path="aspirer" class="error"/>
-				<form:input type="hidden" path="aspirer" value="${userId}" class="form-control"/>
+				<form:errors path="user" class="error"/>
+				<form:input type="hidden" path="user" value="${userId}" class="form-control"/>
 				
 				<input type="hidden" name="_method" value="put" />
 			

@@ -27,11 +27,7 @@ public class JournalServ {
 		}
 		
 		public List<Journal> getAssignedJournals(User user){
-			return journalRepo.findAllByUsers(user);
-		}
-		
-		public List<Journal> getUnassignedJournals(User user){
-			return journalRepo.findByUsersNotContains(user);
+			return journalRepo.findAllByUser(user);
 		}
 		
 		public Journal addJournal(Journal journal) {
